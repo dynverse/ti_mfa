@@ -1,5 +1,6 @@
 id: mfa
 docker_repository: dynverse/ti_mfa
+singularity_collection: 1554
 container_url: https://github.com/dynverse/ti_mfa
 name: mfa
 type: algorithm
