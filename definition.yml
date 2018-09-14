@@ -8,12 +8,9 @@ doi: 10.12688/wellcomeopenres.11087.1
 platform: R
 google_scholar_cluster_id: '1870082668590545'
 trajectory_types:
-- linear
-- bifurcation
-- convergence
-- multifurcation
-- binary_tree
-- tree
+  - linear
+  - bifurcation
+  - multifurcation
 topology_inference: parameter
 license: GPL (>= 2)
 publication_date: '2017-03-15'
