@@ -1,8 +1,8 @@
 FROM dynverse/dynwrap:r
 
-LABEL version 0.1.2
-
 RUN R -e 'devtools::install_github("kieranrcampbell/mfa")'
+
+LABEL version 0.1.4
 
 ADD . /code
 
