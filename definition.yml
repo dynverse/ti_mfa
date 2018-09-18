@@ -2,7 +2,7 @@ id: mfa
 docker_repository: dynverse/ti_mfa
 singularity_collection: 1554
 container_url: https://github.com/dynverse/ti_mfa
-name: mfa
+name: MFA
 type: algorithm
 doi: 10.12688/wellcomeopenres.11087.1
 platform: R
