@@ -31,7 +31,7 @@ checkpoints <- list(method_afterpreproc = as.numeric(Sys.time()))
 # perform MFA
 m <- mfa::mfa(
   y = expression,
-  b = params$b,
+  b = data$end_n,
   iter = params$iter,
   thin = params$thin,
   zero_inflation = params$zero_inflation,
