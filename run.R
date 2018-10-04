@@ -21,8 +21,14 @@ params <- jsonlite::read_json("/ti/input/params.json")
 
 expression <- data$expression
 
+# make sure we have at least one end state
+if (data$end_n == 0) {
+  data$end_n <- 1
+}
+
 #   ____________________________________________________________________________
 #   Infer trajectory                                                        ####
+
 
 
 # TIMING: done with preproc
