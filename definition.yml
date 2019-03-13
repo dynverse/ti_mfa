@@ -1,70 +1,80 @@
-id: mfa
-docker_repository: dynverse/ti_mfa
-singularity_collection: 1554
-container_url: https://github.com/dynverse/ti_mfa
-name: MFA
-source: tool
-doi: 10.12688/wellcomeopenres.11087.1
-platform: R
-google_scholar_cluster_id: '1870082668590545'
-trajectory_types:
+method:
+  id: mfa
+  name: MFA
+  tool_id: mfa
+  source: tool
+  platform: R
+  url: https://github.com/kieranrcampbell/mfa
+  authors:
+  - given: Kieran
+    family: Campbell
+    email: kicampbell@bccrc.ca
+    github: kieranrcampbell
+  - given: Christopher
+    family: Yau
+    email: cyau@well.ox.ac.uk
+    ORCID: 0000-0001-7615-8523
+
+manuscript:
+  doi: 10.12688/wellcomeopenres.11087.1
+  google_scholar_cluster_id: '1870082668590545'
+  publication_date: '2017-03-15'
+
+container:
+  url: https://github.com/dynverse/ti_mfa
+  docker: dynverse/ti_mfa
+
+wrapper:
+  type: end_state_probabilities
+  topology_inference: parameter
+  trajectory_types:
   - linear
   - bifurcation
   - multifurcation
-topology_inference: parameter
-license: GPL (>= 2)
-publication_date: '2017-03-15'
-code_url: https://github.com/kieranrcampbell/mfa
+  example: /code/example.R
+  input_required:
+  - expression
+  - end_n
+
 parameters:
-  iter:
+  - id: iter
     type: integer
     default: 2000
-    upper: 5000
-    lower: 20
+    distribution:
+      type: uniform
+      upper: 5000
+      lower: 20
     description: Number of MCMC iterations
-  thin:
+  - id: thin
     type: integer
     default: 1
-    upper: 20
-    lower: 1
+    distribution:
+      type: uniform
+      upper: 20
+      lower: 1
     description: MCMC samples to thin
-  pc_initialise:
+  - id: pc_initialise
     type: integer
     default: 1
-    upper: 5
-    lower: 1
+    distribution:
+      type: uniform
+      upper: 5
+      lower: 1
     description: Which principal component to initialise pseudotimes to
-  prop_collapse:
+  - id: prop_collapse
     type: numeric
     default: 0.0e+00
-    upper: 1.0
-    lower: 0.0e+00
+    distribution:
+      type: uniform
+      upper: 1.0
+      lower: 0.0e+00
     description: Proportion of Gibbs samples which should marginalise over c
-  scale_input:
+  - id: scale_input
     type: logical
     default: yes
     description: Logical. If true, input is scaled to have mean 0 variance 1
-  zero_inflation:
+  - id: zero_inflation
     type: logical
     default: no
     description: Logical, should zero inflation be enabled?
-input:
-  format: rds
-  required: 
-  - expression
-  - end_n
-output:
-  format: rds
-  outputs:
-  - end_state_probabilities
-  - timings
-wrapper_type: end_state_probabilities
-authors:
-- given: Kieran
-  family: Campbell
-  email: kicampbell@bccrc.ca
-  github: kieranrcampbell
-- given: Christopher
-  family: Yau
-  email: cyau@well.ox.ac.uk
-  ORCID: 0000-0001-7615-8523
+
