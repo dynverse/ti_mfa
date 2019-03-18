@@ -41,32 +41,32 @@ parameters:
     default: 2000
     distribution:
       type: uniform
-      upper: 5000
       lower: 20
+      upper: 5000
     description: Number of MCMC iterations
   - id: thin
     type: integer
     default: 1
     distribution:
       type: uniform
-      upper: 20
       lower: 1
+      upper: 20
     description: MCMC samples to thin
   - id: pc_initialise
     type: integer
     default: 1
     distribution:
       type: uniform
-      upper: 5
       lower: 1
+      upper: 5
     description: Which principal component to initialise pseudotimes to
   - id: prop_collapse
     type: numeric
-    default: 0.0e+00
+    default: 0
     distribution:
       type: uniform
-      upper: 1.0
-      lower: 0.0e+00
+      lower: 0
+      upper: 1
     description: Proportion of Gibbs samples which should marginalise over c
   - id: scale_input
     type: logical
