@@ -16,7 +16,7 @@ library(mfa)
 
 expression <- as.matrix(task$expression)
 end_n <- task$priors$end_n
-params <- task$params
+parameters <- task$parameters
 
 # make sure we have at least one end state
 if (end_n == 0) {
@@ -33,12 +33,12 @@ checkpoints <- list(method_afterpreproc = as.numeric(Sys.time()))
 m <- mfa::mfa(
   y = expression,
   b = end_n,
-  iter = params$iter,
-  thin = params$thin,
-  zero_inflation = params$zero_inflation,
-  pc_initialise = params$pc_initialise,
-  prop_collapse = params$prop_collapse,
-  scale_input = params$scale_input
+  iter = parameters$iter,
+  thin = parameters$thin,
+  zero_inflation = parameters$zero_inflation,
+  pc_initialise = parameters$pc_initialise,
+  prop_collapse = parameters$prop_collapse,
+  scale_input = parameters$scale_input
 )
 
 # TIMING: done with method
