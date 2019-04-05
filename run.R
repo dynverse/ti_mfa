@@ -2,14 +2,13 @@
 
 task <- dyncli::main()
 
-library(jsonlite)
-library(readr)
-library(dplyr)
-library(purrr)
-library(tidyr)
-library(tibble)
+library(dplyr, warn.conflicts = FALSE)
+library(purrr, warn.conflicts = FALSE)
+library(tidyr, warn.conflicts = FALSE)
+library(tibble, warn.conflicts = FALSE)
+library(dynwrap, warn.conflicts = FALSE
 
-library(mfa)
+library(mfa, warn.conflicts = FALSE)
 
 #   ____________________________________________________________________________
 #   Load data                                                               ####
@@ -68,7 +67,8 @@ pseudotime <-
 #   ____________________________________________________________________________
 #   Save output                                                             ####
 
-output <- dynwrap::wrap_data(cell_ids = names(pseudotime)) %>%
+output <- 
+  dynwrap::wrap_data(cell_ids = names(pseudotime)) %>%
   dynwrap::add_end_state_probabilities(
     end_state_probabilities = end_state_probabilities,
     pseudotime = pseudotime
