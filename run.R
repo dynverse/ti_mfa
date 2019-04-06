@@ -6,7 +6,7 @@ library(dplyr, warn.conflicts = FALSE)
 library(purrr, warn.conflicts = FALSE)
 library(tidyr, warn.conflicts = FALSE)
 library(tibble, warn.conflicts = FALSE)
-library(dynwrap, warn.conflicts = FALSE
+library(dynwrap, warn.conflicts = FALSE)
 
 library(mfa, warn.conflicts = FALSE)
 
